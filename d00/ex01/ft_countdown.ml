@@ -1,4 +1,4 @@
-let ft_printnum num = print_int num; print_char '\n'
+let ft_printnum (num : int) : unit = print_int num; print_char '\n'
 
 let rec ft_countdown (num: int) : unit =
     if num < 0 then ()

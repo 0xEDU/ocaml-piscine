@@ -1,4 +1,4 @@
-let rec ft_power base exponent = 
+let rec ft_power (base : int) (exponent : int) = 
     if exponent = 0 then
         1
     else if exponent = 1 then
