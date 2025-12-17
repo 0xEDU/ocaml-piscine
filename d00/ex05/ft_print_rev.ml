@@ -1,4 +1,4 @@
-let ft_print_rev (s : string) =
+let ft_print_rev (s : string) : unit =
         let final_char = (String.length s) - 1 in
         
         let rec rev_iterate pos =
