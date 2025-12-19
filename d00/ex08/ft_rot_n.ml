@@ -1,14 +1,15 @@
 let ft_rot_n (n : int) (str : string) =
-        let rotate c =
-                let c_as_int = int_of_char c in
-                if 97 <= c_as_int && c_as_int <= 122 then
-                        char_of_int ((((c_as_int + n) - 97) mod 26) + 97)
-                else if 65 <= c_as_int && c_as_int <= 90 then
-                        char_of_int ((((c_as_int + n) - 65) mod 26) + 65)
-                else
-                        c
-        in
-        String.map rotate str
+    let rotate c =
+        let c_as_int = int_of_char c in
+
+        if 97 <= c_as_int && c_as_int <= 122 then
+            char_of_int ((((c_as_int + n) - 97) mod 26) + 97)
+        else if 65 <= c_as_int && c_as_int <= 90 then
+            char_of_int ((((c_as_int + n) - 65) mod 26) + 65)
+        else
+            c
+    in
+    String.map rotate str
 
 (* tests *)
 let _ = ft_rot_n 1 "abcdefghijklmnopqrstuvwxyz" |> print_endline

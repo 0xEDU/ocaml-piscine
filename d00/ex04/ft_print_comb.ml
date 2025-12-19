@@ -1,25 +1,34 @@
 let ft_print_comb () : unit =
-    let print_number x y z =
-        print_int x;
-        print_int y;
-        print_int z;
-        if x != 7 then print_string ", "
+    let print_number a b c =
+        print_int a;
+        print_int b;
+        print_int c;
+        if a != 7 then print_string ", "
     in
 
-    let rec for_each_z x y z =
-        if z < 10 then (print_number x y z; for_each_z x y (z + 1))
+    let rec iterate_c a b c =
+        if c < 10 then (
+            print_number a b c;
+            iterate_c a b (c + 1)
+        )
     in
 
-    let rec for_each_y x y =
-        if y < 9 then (for_each_z x y (y + 1); for_each_y x (y + 1))
+    let rec iterate_b a b =
+        if b < 9 then (
+            (iterate_c a b (b + 1);
+            iterate_b a (b + 1))
+        )
     in
 
-    let rec for_each_x x =
-        if x < 8 then (for_each_y x (x + 1); for_each_x (x + 1))
-    in for_each_x 0;
+    let rec iterate_a a =
+        if a < 8 then (
+            iterate_b a (a + 1);
+            iterate_a (a + 1)
+        )
+    in iterate_a 0;
 
     print_string "\n"
  
 
 (* tests *)
-let _ = ft_print_comb()
+let _ = ft_print_comb ()
