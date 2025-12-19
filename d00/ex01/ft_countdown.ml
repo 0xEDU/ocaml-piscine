@@ -8,6 +8,6 @@ let rec ft_countdown (num: int) : unit =
     end
 
 (* tests *)
-(* let _ = ft_countdown(5) *)
-(* let _ = ft_countdown(0) *)
-(* let _ = ft_countdown(-1) *)
+let _ = ft_countdown(5)
+let _ = ft_countdown(0)
+let _ = ft_countdown(-1)
