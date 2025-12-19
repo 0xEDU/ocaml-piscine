@@ -15,8 +15,8 @@ let ft_print_comb () : unit =
 
     let rec iterate_b a b =
         if b < 9 then (
-            (iterate_c a b (b + 1);
-            iterate_b a (b + 1))
+            iterate_c a b (b + 1);
+            iterate_b a (b + 1)
         )
     in
 
