@@ -8,6 +8,7 @@ let rec ackermann (m : int) (n : int) : int =
     else
         -1
 
+(* tests *)
 let main () =
     print_int (ackermann (-1) (-1)); print_newline ();
     print_int (ackermann (-1) 1); print_newline ();

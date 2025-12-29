@@ -4,6 +4,7 @@ let rec tak (x : int) (y : int) (z : int) =
     else
         z
 
+(* tests *)
 let main () =
     print_int (tak 1 2 3); print_newline ();
     print_int (tak 5 23 7); print_newline ();
