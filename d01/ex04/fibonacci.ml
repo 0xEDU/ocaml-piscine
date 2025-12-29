@@ -11,6 +11,7 @@ let fibonacci (n : int) =
 
 (* tests *)
 let main () =
+    print_int (fibonacci (-42)); print_newline ();
     print_int (fibonacci 1); print_newline ();
     print_int (fibonacci 5); print_newline ();
     print_int (fibonacci 9); print_newline ();
