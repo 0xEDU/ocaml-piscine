@@ -1,12 +1,25 @@
 let encode (l : 'a list) : (int * 'a) list =
-    let rec loop l n acc =
-        match l with
-        | head :: next :: tail when head = next -> loop (next :: tail) (n + 1) acc
-        | head :: next :: tail when head != next -> loop (next :: tail) 1 (acc @ [(n, head)])
-        | head :: [] -> loop [] 1 (acc @ [(n, head)])
-        | _ -> acc
+    (* using the @ operator in the main loop results in O(n^2) *)
+    (* using :: and then reversing the list boils it down to O(n)  *)
+    let rev l =
+        let rec rev_loop l acc =
+            match l with
+            | [] -> acc
+            | head :: tail -> rev_loop tail (head :: acc)
+        in
+        rev_loop l []
     in
-    loop l 1 []
+
+    let rec encode_loop current count rest acc =
+        match rest with
+        | head :: tail when head = current -> encode_loop current (count + 1) tail acc
+        | head :: tail -> encode_loop head 1 tail ((count, current) :: acc)
+        | [] -> (count, current) :: acc
+    in
+
+    match l with
+    | [] -> []
+    | head :: tail -> rev (encode_loop head 1 tail [])
 
 (* tests *)
 let main () =
