@@ -25,6 +25,7 @@ let gray (n : int) =
     print_gray 0;
     print_newline ()
 
+(* tests *)
 let main () =
     print_string "Gray sequence for 0 bits: "; gray 0;
     print_string "Gray sequence for 1 bits: "; gray 1;
