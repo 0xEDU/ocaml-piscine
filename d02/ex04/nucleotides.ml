@@ -15,19 +15,16 @@ type nucleotide = {
     nucleobase : nucleobase
 }
 
-let generate_nucleotide (c : char) : nucleotide =
-    let p = match c with
-            | 'a' | 'A' -> A
-            | 't' | 'T' -> T
-            | 'c' | 'C' -> C
-            | 'g' | 'G' -> G
-            | _ -> None
-    in
-    {
-        phosphate = "phosphate";
-        deoxyribose = "deoxyribose";
-        nucleobase = p
-    }
+let generate_nucleotide (c : char) : nucleotide = {
+    phosphate = "phosphate";
+    deoxyribose = "deoxyribose";
+    nucleobase = match c with
+        | 'a' | 'A' -> A
+        | 't' | 'T' -> T
+        | 'c' | 'C' -> C
+        | 'g' | 'G' -> G
+        | _ -> None
+}
 
 (* tests *)
 let main () =
