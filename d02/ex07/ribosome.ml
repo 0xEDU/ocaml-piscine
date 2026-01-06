@@ -104,6 +104,37 @@ let generate_base_triplets (r : rna) : (nucleobase * nucleobase * nucleobase) li
     in
     loop r []
 
+type aminoacid =
+    | Stop
+    | Ala
+    | Arg
+    | Asn
+    | Asp
+    | Cys
+    | Gln
+    | Glu
+    | Gly
+    | His
+    | Ile
+    | Leu
+    | Lys
+    | Met
+    | Phe
+    | Pro
+    | Ser
+    | Thr
+    | Trp
+    | Tyr
+    | Val
+
+type protein = aminoacid list
+
+(*let string_of_protein (p : protein) : string =*)
+(*    let rec loop p acc =*)
+(*        match p with*)
+(*        | [] -> acc*)
+(*        | (a, b, c) :: tail -*)
+
 (* tests *)
 let main () =
     let print_nucleobase nb =
